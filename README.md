@@ -1,14 +1,14 @@
-# uglify
+# Uglify:
 
 Uglify is A simple tool to uglify javascript & css files
 
-## Installing
+## Installing:
 
 ```shell
  $ npm install -g uglify
 ```
 
-## Usage
+## Usage:
 ```shell
   $ uglify -h
 
@@ -21,13 +21,14 @@ Uglify is A simple tool to uglify javascript & css files
     -s, --source <items>  sorce files
     -o, --output [value]  output file
     -c, --css             whether uglify css files
-    -r, --root [value]    static root directory path, used to replace css urls with absolute path
+    -r, --root [value]    static root directory name, used to replace css urls with absolute path
 
   Examples:
 
     $ uglify -s ~/application.js,~/home.js -o ~/home.min.js
     $ uglify -s ~/application.css,~/home.css -o ~/home.min.css -c
+    $ uglify -s ~/application.css,~/home.css -o ~/home.min.css -r public -c
 ```
 
-## License
+## License:
 MIT

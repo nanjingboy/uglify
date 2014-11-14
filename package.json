@@ -1,8 +1,11 @@
 {
   "name": "uglify",
+  "description": "A simple tool to uglify javascript & css files",
   "version": "0.1.0",
   "author": "Tom.Huang <hzlhu.dargon@gmail.com>",
   "dependencies": {
+    "underscore": "1.4.x",
+    "underscore.string": "2.3.3",
     "commander": "*",
     "grunt": "0.4.1",
     "grunt-contrib-concat": "0.3.0",
