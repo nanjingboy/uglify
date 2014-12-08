@@ -1,32 +1,14 @@
 #!/usr/bin/env node
 var fs = require('fs'),
-    _ = require('underscore'),
-    string = require('underscore.string'),
     commander = require('commander'),
-    Uglify = require('../lib/uglify');
+    Uglify = require('../lib/uglify'),
+    packageConfig;
 
-function parseSourceFiles(val) {
-    var sourceFiles = _.map(val.split(','), function(file) {
-        if (string.startsWith(file, '~/')) {
-            file = process.env.HOME + '/' + string.ltrim(file, '~/');
-        } else if (string.startsWith(file, '/') === false) {
-            file = process.cwd() + '/' + file;
-        }
-
-        if (fs.existsSync(file)) {
-            return fs.realpathSync(file);
-        }
-
-        return null;
-    });
-
-    return _.filter(sourceFiles, function(sourceFile) {
-        return sourceFile !== null
-    });
-}
-
-commander.version('0.1.0')
-    .option('-s, --source <items>', 'sorce files', parseSourceFiles, [])
+packageConfig = JSON.parse(
+    fs.readFileSync(__dirname + '/../package.json').toString()
+);
+commander.version(packageConfig.version)
+    .option('-s, --source <items>', 'sorce files', function(val) { return val.split(','); } , [])
     .option('-o, --output [value]', 'output file', null)
     .option('-c, --css', 'whether uglify css files', false)
     .option('-r, --root [value]', 'static root directory name, used to replace css urls with absolute path', null);

@@ -1,6 +1,6 @@
 # Uglify:
 
-Uglify is A simple tool to uglify javascript & css files
+Uglify is a simple tool to uglify javascript & css files
 
 ## Installing:
 
