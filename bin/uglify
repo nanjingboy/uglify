@@ -8,7 +8,7 @@ packageConfig = JSON.parse(
     fs.readFileSync(__dirname + '/../package.json').toString()
 );
 commander.version(packageConfig.version)
-    .option('-s, --source <items>', 'sorce files', function(val) { return val.split(','); } , [])
+    .option('-s, --source <items>', 'source files', function(val) { return val.split(','); } , [])
     .option('-o, --output [value]', 'output file', null)
     .option('-c, --css', 'whether uglify css files', false)
     .option('-r, --root [value]', 'static root directory name, used to replace css urls with absolute path', null);
