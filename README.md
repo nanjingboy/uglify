@@ -18,7 +18,7 @@ Uglify is a simple tool to uglify javascript & css files
 
     -h, --help            output usage information
     -V, --version         output the version number
-    -s, --source <items>  sorce files
+    -s, --source <items>  source files
     -o, --output [value]  output file
     -c, --css             whether uglify css files
     -r, --root [value]    static root directory name, used to replace css urls with absolute path
