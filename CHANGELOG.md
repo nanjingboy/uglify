@@ -1,3 +1,6 @@
+## 0.1.5 June 05, 2015
+* Fix grunt dependency issue
+
 ## 0.1.3 March 30, 2015
 * Fix error for source spelling
 
